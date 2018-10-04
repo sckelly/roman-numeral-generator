@@ -1,0 +1,19 @@
+{
+  "name": "roman-numeral-generator",
+  "version": "1.0.0",
+  "description": "Coding Kata for converting numbers to Roman Numerals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sckelly/roman-numeral-generator.git"
+  },
+  "author": "Scott Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sckelly/roman-numeral-generator/issues"
+  },
+  "homepage": "https://github.com/sckelly/roman-numeral-generator#readme"
+}
