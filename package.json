@@ -4,7 +4,7 @@
   "description": "Coding Kata for converting numbers to Roman Numerals",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/sckelly/roman-numeral-generator#readme",
   "devDependencies": {
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
   }
 }
