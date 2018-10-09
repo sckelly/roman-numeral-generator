@@ -2,16 +2,16 @@ checkNumberBoundary = (number) => {
   return number >= 1 && number <= 3999;
 };
   
-checkNumberIsNaN = (number) => {
+checkIsNaN = (number) => {
   return isNaN(number);
 };
 
-checkTypeOfIsInteger = (number) => {
+isInteger = (number) => {
   return (typeof number === Number);
 };
 
 module.exports = {
   checkNumberBoundary,
-  checkNumberIsNaN,
-  checkTypeOfIsInteger
+  checkIsNaN,
+  isInteger
 };

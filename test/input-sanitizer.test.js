@@ -1,17 +1,15 @@
 const inputSanitizer = require('../src/input-santiser');
 
 describe('Input Sanitizer', () => {
-  const checkNumberBoundary = inputSanitizer.checkNumberBoundary;
-  const checkNumberIsNaN = inputSanitizer.checkNumberIsNaN;
-  const checkTypeOfIsInteger = inputSanitizer.checkTypeOfIsInteger;
+  const { checkNumberBoundary, checkIsNaN, isInteger } = inputSanitizer;
 
-  describe('for number boundaries', () => {
+  describe('Check Number Boundary', () => {
     test('should return false to out of bounds numbers (below 1)', () => {
       expect(checkNumberBoundary(0)).toBe(false);
     });
     
     test('should return false to out of bounds numbers (above 3999)', () => {
-    expect(checkNumberBoundary(4001)).toBe(false);
+      expect(checkNumberBoundary(4001)).toBe(false);
     });
       
     test('should return true to numbers between 1 and 3999', () => {
@@ -21,21 +19,30 @@ describe('Input Sanitizer', () => {
     test('should return true to numbers between 1 and 3999', () => {
       expect(checkNumberBoundary(600)).toBe(true);
     });
-
   });
 
-  describe('for invalid inputs', () => {
+  describe('Check Type Is Integer', () => {
     test('should return false to strings', () => {
-      expect(checkTypeOfIsInteger('hello')).toBe(false);
+      expect(isInteger('hello')).toBe(false);
     });
 
     test('should return false to objects', () => {
-      expect(checkTypeOfIsInteger({'key': 'value'})).toBe(false);
+      expect(isInteger({'key': 'value'})).toBe(false);
     })
 
     test('should return false to arrays', () => {
-      expect(checkTypeOfIsInteger([1, 2, 3, 4, 5])).toBe(false);
+      expect(isInteger([1, 2, 3, 4, 5])).toBe(false);
     })
+  });
+
+  describe('Check Number Is NaN', () => {
+    test('should return true if param is Not a Number', () => {
+      expect(checkIsNaN('Not a number')).toBe(true);
+    });
+
+    test('should return false if param is a number', () => {
+      expect(checkIsNaN(20)).toBe(false);
+    });
   });
 
 });

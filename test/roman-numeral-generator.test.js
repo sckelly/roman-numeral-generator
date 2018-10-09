@@ -1,8 +1,6 @@
-const numberGenerator = require('../src/number-generator');
+const { romanNumeralGenerator } = require('../src/roman-numeral-generator');
 
 describe('Number Generator', () => {
-
-  const romanNumeralGenerator = numberGenerator.romanNumeralGenerator;
 
   test('Roman Numeral should throw an error on out of bounds number below 1', () => {
     try {
