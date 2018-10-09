@@ -1,8 +1,8 @@
-const inputSanitzer = require('./input-santiser');
 const romanNumeralMap = require('../mappings/roman-numeral-mappings');
+const { checkNumberBoundary, checkIsNaN } = require('./input-santiser');
 
 const romanNumeralGenerator = (number) => {
-  if (inputSanitzer.checkNumberBoundary(number) && !inputSanitzer.checkNumberIsNaN(number)) {
+  if (checkNumberBoundary(number) && !checkIsNaN(number)) {
     let romanNumeral = '';
     const mappingKeys = Object.keys(romanNumeralMap).reverse();
   
@@ -14,12 +14,8 @@ const romanNumeralGenerator = (number) => {
     });
     return romanNumeral;
   } else {
-    throw new Error('\nAn error occurred with user input.');
+    throw new Error('\nAn error occurred with user input. Please check your input is a number is between 1 and 3999');
   }
-}
-
-const greekNumeralGenerator = (number) => {
-  // ...
 }
 
 module.exports = {

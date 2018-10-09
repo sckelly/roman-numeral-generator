@@ -4,7 +4,8 @@
   "description": "Coding Kata for converting numbers to Roman Numerals",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "./node_modules/.bin/jest ./test",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
