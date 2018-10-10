@@ -15,8 +15,15 @@ For  example,  see  the  following  sample  inputs  and  outputs:
 * 20  =  “XX”
 * 3999  =  “MMMCMXCIX”
 
-Caveat: Only support numbers between 1 and 3999   
+Caveat: Only support numbers between 1 and 3999
 
+## Installation
+
+The codebase requires a dependency "prompt" and the tests require the "jest" test framework.
+
+To ensure this code and respective tests work, please have node and npm installed on your machine and in the projects root folder run:
+
+"npm install"
 
 ## How to run
 
@@ -50,4 +57,5 @@ To achieve this I used a NPM package called "prompt" which takes user input from
 At a point during development, tests kept failing on output strings that would give 'IIIIIIIIII' for 10 and so on, this was due to the ordering of Object.keys(), by not reversing the array of keys, the first value would always be 1, and any number that was input would just return the respective number of "I".
 
 I tried to make the codebase as decoupled as possible, focussing on giving each requirement it's own space in the application codebase. Naturally the application has a lot of input and output strings for errors etc. In retrospect I think it would be smarter to have a messages config file or similair, that would deal with any message handling. However as this is a coding kata, I felt that may be overkill.
+
 
